@@ -19,12 +19,6 @@ void CQ_destroyQueue(CircularQueue* queue) {
 	free(queue);
 }
 
-Node* CQ_createNode(int data) {
-	return NULL;
-}
-
-void CQ_destroyNode(Node* node) {}
-
 void CQ_enqueue(CircularQueue* queue, Node* newNode) {}
 
 Node* CQ_dequeue(CircularQueue* queue) {
