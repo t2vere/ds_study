@@ -24,9 +24,10 @@ typedef struct tagCircularQueue {
 
 void CQ_createQueue(CircularQueue** queue, int capa);
 void CQ_destroyQueue(CircularQueue* queue);
-void CQ_enqueue(CircularQueue* queue, Node* newNode);
-Node* CQ_dequeue(CircularQueue* queue);
+void CQ_enqueue(CircularQueue* queue, int data);
+int CQ_dequeue(CircularQueue* queue);
 int CQ_isEmpty(CircularQueue* queue);
 int CQ_isFull(CircularQueue* queue);
+int CQ_getSize(CircularQueue* queue);
 
 #endif /* QUEUE_CIRCUALRQUEUE_H_ */
