@@ -44,7 +44,7 @@ void LQ_enqueue(LinkedQueue* queue, Node* newNode) {
 
 Node* LQ_dequeue(LinkedQueue* queue) {
 	Node* front = queue->front;
-	if (queue->front->next == NULL) { // front Á¦°ÅÇÏ¸é ºó Å¥°¡ µÇ´Â °æ¿ì
+	if (queue->front->next == NULL) { // front ì œê±°í•˜ë©´ ë¹ˆ íê°€ ë˜ëŠ” ê²½ìš°
 		queue->front = NULL;
 		queue->rear = NULL;
 	} else {

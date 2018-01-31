@@ -11,7 +11,7 @@ void CQ_createQueue(CircularQueue** queue, int capa) {
 	(*queue)->capa = 0;
 	(*queue)->front = 0;
 	(*queue)->rear = 0;
-	(*queue)->nodes = (Node*) malloc(sizeof(Node) * (capa + 1)); // Node ¹è¿­ »ç¿ë, ±¸ºÐ ³ëµå¸¦ À§ÇØ ½ÇÁ¦ ³ëµå °³¼öº¸´Ù +1
+	(*queue)->nodes = (Node*) malloc(sizeof(Node) * (capa + 1)); // Node ë°°ì—´ ì‚¬ìš©, êµ¬ë¶„ ë…¸ë“œë¥¼ ìœ„í•´ ì‹¤ì œ ë…¸ë“œ ê°œìˆ˜ë³´ë‹¤ +1
 }
 
 void CQ_destroyQueue(CircularQueue* queue) {
@@ -22,7 +22,7 @@ void CQ_destroyQueue(CircularQueue* queue) {
 void CQ_enqueue(CircularQueue* queue, int data) {
 	int pos = 0;
 
-	if (queue->rear == queue->capa + 1) { // ºó °ø°£ ¾øÀ» °æ¿ì rear index¸¦ Ã³À½À¸·Î
+	if (queue->rear == queue->capa + 1) { // ë¹ˆ ê³µê°„ ì—†ì„ ê²½ìš° rear indexë¥¼ ì²˜ìŒìœ¼ë¡œ
 		queue->rear = 0;
 		pos = 0;
 	} else {
@@ -51,15 +51,15 @@ int CQ_isEmpty(CircularQueue* queue) {
 int CQ_isFull(CircularQueue* queue) {
 	if (queue->front < queue->rear) {
 		return (queue->rear - queue->front) == queue->capa;
-	} else { // rear index°¡ ¾Õ¿¡ ÀÖÀ» ¶§
-		return (queue->rear + 1) == queue->front; // ±¸ºÐ ³ëµå¸¦ Æ÷ÇÔÇØ¼­ front À§Ä¡¿Í °°ÀºÁö
+	} else { // rear indexê°€ ì•žì— ìžˆì„ ë•Œ
+		return (queue->rear + 1) == queue->front; // êµ¬ë¶„ ë…¸ë“œë¥¼ í¬í•¨í•´ì„œ front ìœ„ì¹˜ì™€ ê°™ì€ì§€
 	}
 }
 
 int CQ_getSize(CircularQueue* queue) {
-	if (queue->front <= queue->rear) { // rear index°¡ µÚ¿¡ ÀÖÀ» ¶§
+	if (queue->front <= queue->rear) { // rear indexê°€ ë’¤ì— ìžˆì„ ë•Œ
 		return queue->rear - queue->front;
-	} else { // rear index°¡ ¾Õ¿¡ ÀÖÀ» ¶§, rear + (ÀüÃ¼ size¿¡¼­ front¸¦ »« ¸¸Å­)
+	} else { // rear indexê°€ ì•žì— ìžˆì„ ë•Œ, rear + (ì „ì²´ sizeì—ì„œ frontë¥¼ ëº€ ë§Œí¼)
 		return queue->rear + (queue->capa - queue->front) + 1;
 	}
 }
