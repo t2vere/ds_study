@@ -36,7 +36,9 @@ void ET_preOrderPrintTree(EtNode* node) {
 		return;
 	}
 
-
+	printf(" %c", node->data);
+	ET_preOrderPrintTree(node->left);
+	ET_preOrderPrintTree(node->right);
 }
 
 void ET_postOrderPrintTree(EtNode* node) {
@@ -44,7 +46,9 @@ void ET_postOrderPrintTree(EtNode* node) {
 		return;
 	}
 
-
+	ET_postOrderPrintTree(node->left);
+	ET_postOrderPrintTree(node->right);
+	printf(" %c", node->data);
 }
 
 void ET_inOrderPrintTree(EtNode* node) {
@@ -60,10 +64,59 @@ void ET_inOrderPrintTree(EtNode* node) {
 }
 
 void ET_buildExpressionTree(char* postfixExpression, EtNode** node) {
+	// EtNode* newNode = NULL;
 
+	int len = strlen(postfixExpression);
+	char token = postfixExpression[len - 1];
+	postfixExpression[len - 1] = '\0';
+
+	switch (token) {
+		case '+':
+		case '-':
+		case '*':
+		case '/':
+			*node = ET_createNode(token);
+			ET_buildExpressionTree(postfixExpression, &(*node)->right);
+			ET_buildExpressionTree(postfixExpression, &(*node)->left);
+			break;
+
+		default:
+			*node = ET_createNode(token);
+			break;
+	}
 }
 
 double ET_evaluate(EtNode* tree) {
-	return 0;
+	char temp[2];
+
+	double left = 0, right = 0, result = 0;
+
+	if (tree == NULL) {
+		return 0;
+	}
+
+	switch (tree->data) {
+		case '+':
+		case '-':
+		case '*':
+		case '/':
+			left = ET_evaluate(tree->left);
+			right = ET_evaluate(tree->right);
+
+			if (tree->data == '+') result = left + right;
+			else if (tree->data == '-') result = left - right;
+			else if (tree->data == '*') result = left * right;
+			else if (tree->data == '/') result = left / right;
+
+			break;
+		default:
+			memset(temp, 0, sizeof(temp));
+			temp[0] = tree->data;
+			result = atof(temp);
+
+			break;
+	}
+
+	return result;
 }
 
