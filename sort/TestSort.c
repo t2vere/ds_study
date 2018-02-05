@@ -20,6 +20,8 @@ int main(void) {
 
 	printf("Bubble Sort.\n");
 	bubbleSort(bubbleDataSet, bubbleLength);
+	bubbleSort(bubbleDataSet, bubbleLength);
+	bubbleSort2(bubbleDataSet, bubbleLength);
 
 	for (i = 0; i < bubbleLength; i++) {
 		printf("%d ", bubbleDataSet[i]);
@@ -28,7 +30,7 @@ int main(void) {
 	printf("\n");
 
 	printf("Insertion Sort.\n");
-	bubbleSort(insertionDataSet, insertionLength);
+	insertionSort(insertionDataSet, insertionLength);
 
 	for (i = 0; i < insertionLength; i++) {
 		printf("%d ", insertionDataSet[i]);
@@ -37,7 +39,7 @@ int main(void) {
 	printf("\n");
 
 	printf("Quick Sort.\n");
-	bubbleSort(quickDataSet, quickLength);
+	//bubbleSort(quickDataSet, quickLength);
 
 	for (i = 0; i < quickLength; i++) {
 		printf("%d ", quickDataSet[i]);
