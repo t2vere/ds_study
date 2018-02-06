@@ -8,7 +8,7 @@
 
 #include "DisjointSet.h"
 
-int main(void) {
+int testDisjointSet(void) {
 	int a = 1, b = 2, c = 3, d = 4;
 
 	DisjointSet* set1 = DS_makeSet(&a);

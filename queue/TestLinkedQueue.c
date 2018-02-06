@@ -6,7 +6,7 @@
 
 #include "LinkedQueue.h"
 
-int main(void) {
+int testLinkedQueue(void) {
 
 	Node* popped = NULL;
 	LinkedQueue* queue = NULL;

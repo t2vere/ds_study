@@ -7,7 +7,7 @@
 
 #include "ExpTree.h"
 
-int main(void) {
+int testExpTree(void) {
 
 	EtNode* root = NULL;
 

@@ -7,7 +7,7 @@
 
 #include "SBTree.h"
 
-int main(void) {
+int testSbTree(void) {
 
 	SbtNode* a = SBT_createNode('A');
 	SbtNode* b = SBT_createNode('B');

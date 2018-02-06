@@ -8,7 +8,7 @@
 
 #include "LCRSTree.h"
 
-int main(void) {
+int testLcrsTree(void) {
 
 	LcrsNode* root = LCRS_createNode('A');
 	LcrsNode* b = LCRS_createNode('B');

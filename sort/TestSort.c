@@ -7,7 +7,7 @@
 
 #include "MySort.h"
 
-int main(void) {
+int testSort(void) {
 	int bubbleDataSet[] = {6, 4, 2, 3, 1, 5};
 	int insertionDataSet[] = {6, 4, 2, 3, 1, 5};
 	int quickDataSet[] = {6, 4, 2, 3, 1, 5};
