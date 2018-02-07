@@ -5,13 +5,12 @@
  *      Author: user
  */
 
-//#include "../queue/CircualrQueue.h"
-//#include "../queue/LinkedQueue.h"
-//#include "../sort/MySort.h"
-//#include "../tree/DisjointSet.h"
-//#include "../tree/ExpTree.h"
-//#include "../tree/LCRSTree.h"
-//#include "../tree/SBTree.h"
+int testLinkedQueue(void);
+int testSbTree(void);
+int testLcrsTree(void);
+int testExpTree(void);
+int testDisjointSet(void);
+int testSort(void);
 
 int main(void) {
 
@@ -20,16 +19,16 @@ int main(void) {
 	// stack
 
 	// queue
-//	testLinkedQueue();
-//
-//	// tree
-//	testSbTree();
-//	testLcrsTree();
-//	testExpTree();
-//	testDisjointSet();
+	testLinkedQueue();
+
+	// tree
+	testSbTree();
+	testLcrsTree();
+	testExpTree();
+	testDisjointSet();
 
 	// sort
-//	testSort();
+	testSort();
 
 	return 0;
 }
