@@ -59,3 +59,7 @@ void testSeqSearch(void) {
 	printList(node1);
 
 }
+
+void testBinSearch(void) {
+
+}

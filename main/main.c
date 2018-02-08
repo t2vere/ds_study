@@ -11,7 +11,8 @@
 //int testExpTree(void);
 //int testDisjointSet(void);
 //int testSort(void);
-void testSearch(void);
+void testSeqSearch(void);
+void testBinSearch(void);
 
 int main(void) {
 
@@ -31,7 +32,8 @@ int main(void) {
 //	// sort
 //	testSort();
 
-	testSearch();
+	testSeqSearch();
+	testBinSearch();
 
 	return 0;
 }
