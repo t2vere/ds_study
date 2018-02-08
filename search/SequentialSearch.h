@@ -37,7 +37,10 @@ Node* SLL_sequentialSearch(Node* head, int target);
 
 Node* SLL_moveToFront(Node** head, int target);
 Node* SLL_transpose(Node** head, int target);
-Node* SLL_frequencyCount(Node* head, int target);
-void SLL_frequencyCountSort(Node* head);
+Node* SLL_frequencyCount(Node** head, int target);
+void SLL_frequencyCountSort(Node** head, Node* node);
+
+// 테스트용
+Node* createNode(int data);
 
 #endif /* SEARCH_SEQUENTIALSEARCH_H_ */

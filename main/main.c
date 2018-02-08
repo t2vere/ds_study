@@ -5,12 +5,13 @@
  *      Author: user
  */
 
-int testLinkedQueue(void);
-int testSbTree(void);
-int testLcrsTree(void);
-int testExpTree(void);
-int testDisjointSet(void);
-int testSort(void);
+//int testLinkedQueue(void);
+//int testSbTree(void);
+//int testLcrsTree(void);
+//int testExpTree(void);
+//int testDisjointSet(void);
+//int testSort(void);
+void testSearch(void);
 
 int main(void) {
 
@@ -19,16 +20,18 @@ int main(void) {
 	// stack
 
 	// queue
-	testLinkedQueue();
+//	testLinkedQueue();
+//
+//	// tree
+//	testSbTree();
+//	testLcrsTree();
+//	testExpTree();
+//	testDisjointSet();
+//
+//	// sort
+//	testSort();
 
-	// tree
-	testSbTree();
-	testLcrsTree();
-	testExpTree();
-	testDisjointSet();
-
-	// sort
-	testSort();
+	testSearch();
 
 	return 0;
 }

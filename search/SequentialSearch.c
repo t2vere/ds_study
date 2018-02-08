@@ -130,3 +130,12 @@ void SLL_frequencyCountSort(Node** head, Node* node) {
 	prev->next = node;
 }
 
+Node* createNode(int data) {
+	Node* node = (Node*) malloc(sizeof(Node));
+	node->data = data;
+	node->count = 0;
+	node->next = NULL;
+
+	return node;
+}
+
