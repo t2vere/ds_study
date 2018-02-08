@@ -7,9 +7,8 @@
 
 
 #include "SequentialSearch.h"
-#include "BinarySearch.h"
 
-void testSearch(void) {
+void testSeqSearch(void) {
 
 	Node* node1 = createNode(240);
 	Node* node2 = createNode(700);
@@ -26,7 +25,37 @@ void testSearch(void) {
 	node5->next = node6;
 	node6->next = node7;
 
+	printf("Sequential Search.\n");
+	printList(node1);
 	Node* search = SLL_sequentialSearch(node1, 101);
 	printf("%d\n", search->data);
+	printList(node1);
+
+	printf("\n\nMove to front method.\n");
+	printList(node1);
+	search = SLL_moveToFront(&node1, 101);
+	printf("%d\n", search->data);
+	printList(node1);
+
+	printf("\n\nTranspose method.\n");
+	printList(node1);
+	search = SLL_transpose(&node1, 800);
+	printf("%d\n", search->data);
+	printList(node1);
+
+	printf("\n\nFrequency count method.\n");
+	printList(node1);
+	search = SLL_frequencyCount(&node1, 111);
+	printList(node1);
+	search = SLL_frequencyCount(&node1, 234);
+	printList(node1);
+	search = SLL_frequencyCount(&node1, 111);
+	printList(node1);
+	search = SLL_frequencyCount(&node1, 800);
+	printList(node1);
+	search = SLL_frequencyCount(&node1, 111);
+	printList(node1);
+	search = SLL_frequencyCount(&node1, 234);
+	printList(node1);
 
 }

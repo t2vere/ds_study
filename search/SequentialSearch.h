@@ -42,5 +42,6 @@ void SLL_frequencyCountSort(Node** head, Node* node);
 
 // 테스트용
 Node* createNode(int data);
+void printList(Node* head);
 
 #endif /* SEARCH_SEQUENTIALSEARCH_H_ */

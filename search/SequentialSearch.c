@@ -35,8 +35,9 @@ Node* SLL_moveToFront(Node** head, int target) {
 			matched = curr;
 
 			if (prev != NULL) {
-				prev->next = matched->next;
-				matched->next = (*head);
+				prev->next = curr->next;
+				curr->next = (*head);
+				(*head) = curr;
 			}
 			break;
 		}
@@ -113,7 +114,8 @@ void SLL_frequencyCountSort(Node** head, Node* node) {
 
 	while (curr != NULL) {
 		if (prev == NULL && curr->count <= node->count) {
-			(*head) = curr;
+			node->next = (*head);
+			(*head) = node;
 			break;
 		} else if (prev != NULL
 				&& prev->count > node->count
@@ -127,7 +129,9 @@ void SLL_frequencyCountSort(Node** head, Node* node) {
 		curr = curr->next;
 	}
 
-	prev->next = node;
+	if (prev != NULL) {
+		prev->next = node;
+	}
 }
 
 Node* createNode(int data) {
@@ -137,5 +141,14 @@ Node* createNode(int data) {
 	node->next = NULL;
 
 	return node;
+}
+
+void printList(Node* head) {
+	Node* curr = head;
+	while (curr != NULL) {
+		printf("{data: %d, cnt: %d}\t", curr->data, curr->count);
+		curr = curr->next;
+	}
+	printf("\n");
 }
 
