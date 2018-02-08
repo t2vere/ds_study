@@ -13,6 +13,7 @@
 //int testSort(void);
 void testSeqSearch(void);
 void testBinSearch(void);
+void testBinSearch2(void);
 
 int main(void) {
 
@@ -34,6 +35,7 @@ int main(void) {
 
 	testSeqSearch();
 	testBinSearch();
+	testBinSearch2();
 
 	return 0;
 }

@@ -58,3 +58,20 @@ void testBinSearch(void) {
 
 	printf("found: %d %f \n", found->number, found->score);
 }
+
+void testBinSearch2(void) {
+	int length = sizeof DataSet / sizeof DataSet[0];
+
+	Score target;
+	Score* found = NULL;
+
+	qsort((void*) DataSet, length, sizeof(Score), compareScore);
+
+	target.number = 0;
+	target.score = 671.78;
+
+	found = bsearch((void*) &target, (void*) DataSet, length, sizeof(Score), compareScore);
+
+	printf("found bsearch(): %d %f \n", found->number, found->score);
+
+}
