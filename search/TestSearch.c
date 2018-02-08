@@ -58,8 +58,6 @@ void testSeqSearch(void) {
 	search = SLL_frequencyCount(&node1, 234);
 	printList(node1);
 
+	printf("\n\n");
 }
 
-void testBinSearch(void) {
-
-}
