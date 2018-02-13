@@ -7,6 +7,7 @@
 
 
 #include "SequentialSearch.h"
+#include "BinarySearchTree.h"
 
 void testSeqSearch(void) {
 
@@ -61,3 +62,39 @@ void testSeqSearch(void) {
 	printf("\n\n");
 }
 
+void testBinarySearchTree(void) {
+	BstNode* tree = BST_createNode(123);
+	BstNode* node = NULL;
+
+	BST_insertNode(tree, BST_createNode(52));
+	BST_insertNode(tree, BST_createNode(7322));
+	BST_insertNode(tree, BST_createNode(867));
+	BST_insertNode(tree, BST_createNode(82));
+	BST_insertNode(tree, BST_createNode(43));
+	BST_insertNode(tree, BST_createNode(900));
+	BST_insertNode(tree, BST_createNode(2));
+
+	BST_insertNode(tree, BST_createNode(90));
+	BST_insertNode(tree, BST_createNode(24));
+
+	BST_insertNode(tree, BST_createNode(5112));
+	BST_insertNode(tree, BST_createNode(602));
+	BST_insertNode(tree, BST_createNode(1));
+
+	Bst_inorderPrintTree(tree);
+	printf("\n");
+
+	printf("remove 123.\n");
+	node = BST_removeNode(tree, NULL, 123);
+	BST_destroyNode(node);
+
+	Bst_inorderPrintTree(tree);
+	printf("\n");
+
+	printf("insert 68.\n");
+	BST_insertNode(tree, BST_createNode(68));
+	Bst_inorderPrintTree(tree);
+	printf("\n");
+
+	BST_destroyTree(tree);
+}
