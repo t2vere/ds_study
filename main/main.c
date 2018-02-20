@@ -14,7 +14,8 @@
 //void testSeqSearch(void);
 //void testBinSearch(void);
 //void testBinSearch2(void);
-void testBinarySearchTree(void);
+//void testBinarySearchTree(void);
+void testHeap(void);
 
 int main(void) {
 
@@ -38,7 +39,10 @@ int main(void) {
 //	testSeqSearch();
 //	testBinSearch();
 //	testBinSearch2();
-	testBinarySearchTree();
+//	testBinarySearchTree();
+
+	//heap
+	testHeap();
 
 	return 0;
 }

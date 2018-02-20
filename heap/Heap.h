@@ -19,7 +19,7 @@ typedef struct tagHeapNode {
 } HeapNode;
 
 typedef struct tagHeap {
-	HeapNode* node;
+	HeapNode* nodes;
 	int capa;
 	int usedSize;
 } Heap;
@@ -30,7 +30,7 @@ void insertHeap(Heap* heap, ElementType newData);
 void deleteMinimum(Heap* heap, HeapNode* root);
 int getParent(int index);
 int getLeftChild(int index);
-void swapNodes(Heap* head, int index1, int index2);
+void swapNodes(Heap* heap, int index1, int index2);
 void printNodes(Heap* heap);
 
 #endif /* HEAP_HEAP_H_ */
