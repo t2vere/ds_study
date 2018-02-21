@@ -16,7 +16,8 @@
 //void testBinSearch2(void);
 //void testBinarySearchTree(void);
 //void testHeap(void);
-void testPriorityQueue(void);
+//void testPriorityQueue(void);
+void testSimpleHashTable(void);
 
 int main(void) {
 
@@ -44,7 +45,10 @@ int main(void) {
 
 	//heap
 //	testHeap();
-	testPriorityQueue();
+//	testPriorityQueue();
+
+	// hashtable
+	testSimpleHashTable();
 
 	return 0;
 }
