@@ -15,7 +15,8 @@
 //void testBinSearch(void);
 //void testBinSearch2(void);
 //void testBinarySearchTree(void);
-void testHeap(void);
+//void testHeap(void);
+void testPriorityQueue(void);
 
 int main(void) {
 
@@ -42,7 +43,8 @@ int main(void) {
 //	testBinarySearchTree();
 
 	//heap
-	testHeap();
+//	testHeap();
+	testPriorityQueue();
 
 	return 0;
 }

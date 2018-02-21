@@ -28,11 +28,12 @@ typedef struct tagPriorityQueue {
 
 PriorityQueue* createQueue(int initSize);
 void destroyQueue(PriorityQueue* pq);
-void enqueue(PriorityQueue* pq, PQNode newData);
-void dequeue(PriorityQueue* pq, PQNode root);
-int getParent(int index);
-int getLeftChild(int index);
-void swapNodes(PriorityQueue* pq, int index1, int index2);
+void enqueue(PriorityQueue* pq, PQNode newNode);
+void dequeue(PriorityQueue* pq, PQNode* root);
+int PQ_getParent(int index);
+int PQ_getLeftChild(int index);
+void PQ_swapNodes(PriorityQueue* pq, int index1, int index2);
 int isEmpty(PriorityQueue* pq);
+void printNode(PQNode* node);
 
 #endif /* PQUEUE_PRIORITYQUEUE_H_ */
