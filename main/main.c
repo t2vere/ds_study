@@ -18,7 +18,8 @@
 //void testHeap(void);
 //void testPriorityQueue(void);
 //void testSimpleHashTable(void);
-void testChaining(void);
+//void testChaining(void);
+void testOpenAddressing(void);
 
 int main(void) {
 
@@ -50,7 +51,8 @@ int main(void) {
 
 	// hashtable
 //	testSimpleHashTable();
-	testChaining();
+//	testChaining();
+	testOpenAddressing();
 
 	return 0;
 }

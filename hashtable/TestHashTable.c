@@ -8,6 +8,7 @@
 
 #include "SimpleHashTable.h"
 #include "Chaining.h"
+#include "OpenAddressing.h"
 
 void testSimpleHashTable(void) {
 	HashTable* table = SHT_createHashTable(193);
@@ -56,4 +57,35 @@ void testChaining(void) {
 	printf("Key: %s, Value: %s\n", "NOVL", CHT_get(ht, "NOVL"));
 
 	CHT_destroyHashTable(ht);
+}
+
+void testOpenAddressing(void) {
+	OpenAddrHashTable* ht = OAHT_createHashTable(11);
+
+	OAHT_set(ht, "MSFT", "Microsoft Corp.");
+	OAHT_set(ht, "JAVA", "Sun Microsystems");
+	OAHT_set(ht, "REDH", "Red Hat Linux");
+	OAHT_set(ht, "APAC", "Apache Org.");
+	OAHT_set(ht, "ZYMZZ", "Unisys Ops Check"); // APAC와 충돌
+	OAHT_set(ht, "IBM", "IBM Ltd.");
+	OAHT_set(ht, "ORCL", "Oracle Corp.");
+	OAHT_set(ht, "CSCO", "Cisco Systems, Inc.");
+	OAHT_set(ht, "GOOG", "Google Inc.");
+	OAHT_set(ht, "YHOO", "Yahoo! Inc.");
+	OAHT_set(ht, "NOVL", "Novell, Inc.");
+
+	printf("\n");
+	printf("Key: %s, Value: %s\n", "MSFT", OAHT_get(ht, "MSFT"));
+	printf("Key: %s, Value: %s\n", "JAVA", OAHT_get(ht, "JAVA"));
+	printf("Key: %s, Value: %s\n", "REDH", OAHT_get(ht, "REDH"));
+	printf("Key: %s, Value: %s\n", "APAC", OAHT_get(ht, "APAC"));
+	printf("Key: %s, Value: %s\n", "ZYMZZ", OAHT_get(ht, "ZYMZZ"));
+	printf("Key: %s, Value: %s\n", "IBM", OAHT_get(ht, "IBM"));
+	printf("Key: %s, Value: %s\n", "ORCL", OAHT_get(ht, "ORCL"));
+	printf("Key: %s, Value: %s\n", "CSCO", OAHT_get(ht, "CSCO"));
+	printf("Key: %s, Value: %s\n", "GOOG", OAHT_get(ht, "GOOG"));
+	printf("Key: %s, Value: %s\n", "YHOO", OAHT_get(ht, "YHOO"));
+	printf("Key: %s, Value: %s\n", "NOVL", OAHT_get(ht, "NOVL"));
+
+	OAHT_destroyHashTable(ht);
 }
