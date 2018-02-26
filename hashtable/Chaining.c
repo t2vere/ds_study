@@ -8,9 +8,9 @@
 
 #include "Chaining.h"
 
-HashTable* CHT_createHashTable(int size) {
-	HashTable* tab = (HashTable*) malloc(sizeof(HashTable));
-	tab->table = (List*) malloc(sizeof(Node) * size);
+ChainHashTable* CHT_createHashTable(int size) {
+	ChainHashTable* tab = (ChainHashTable*) malloc(sizeof(ChainHashTable));
+	tab->table = (List*) malloc(sizeof(ChainNode) * size);
 
 	memset(tab->table, 0, sizeof(List) * size);
 	tab->tableSize = size;
@@ -18,8 +18,8 @@ HashTable* CHT_createHashTable(int size) {
 	return tab;
 }
 
-Node* CHT_createNode(KeyType key, ValueType value) {
-	Node* node = (Node*) malloc(sizeof(sizeof(Node)));
+ChainNode* CHT_createChainNode(ChainKeyType key, ChainValueType value) {
+	ChainNode* node = (ChainNode*) malloc(sizeof(sizeof(ChainNode)));
 	node->key = (char*) malloc(sizeof(char) * (strlen(key) + 1));
 	strcpy(node->key, key);
 
@@ -30,18 +30,18 @@ Node* CHT_createNode(KeyType key, ValueType value) {
 	return node;
 }
 
-void CHT_destroyNode(Node* node) {
+void CHT_destroyChainNode(ChainNode* node) {
 	free(node->key);
 	free(node->value);
 	free(node);
 }
 
-void CHT_destroyHashTable(HashTable* tab) {
+void CHT_destroyHashTable(ChainHashTable* tab) {
 	// linked list 제거
 	int i = 0;
-	for (int i = 0; i < tab->tableSize; i++) {
+	for (i = 0; i < tab->tableSize; i++) {
 		List list = tab->table[i];
-		CHT_destroyNode(list);
+		CHT_destroyChainNode(list);
 	}
 
 	// hash table 제거
@@ -49,9 +49,9 @@ void CHT_destroyHashTable(HashTable* tab) {
 	free(tab);
 }
 
-void CHT_set(HashTable* table, KeyType key, ValueType value) {
-	int address = hash(key, strlen(key), table->tableSize);
-	Node* node = CHT_createNode(key, value);
+void CHT_set(ChainHashTable* table, ChainKeyType key, ChainValueType value) {
+	int address = CHT_hash(key, table->tableSize);
+	ChainNode* node = CHT_createChainNode(key, value);
 
 	if (table->table[address] == NULL) {	// 주소가 비어있는 경우
 		table->table[address] = node;
@@ -64,8 +64,8 @@ void CHT_set(HashTable* table, KeyType key, ValueType value) {
 	}
 }
 
-ValueType CHT_get(HashTable* table, KeyType key) {
-	int address = CHT_hash(key, strlen(key), table->tableSize);
+ChainValueType CHT_get(ChainHashTable* table, ChainKeyType key) {
+	int address = CHT_hash(key, table->tableSize);
 	List list = table->table[address];
 	List target = NULL;
 
@@ -89,9 +89,10 @@ ValueType CHT_get(HashTable* table, KeyType key) {
 	return target->value;
 }
 
-int CHT_hash(KeyType key, int keyLength, int tableSize) {
+int CHT_hash(ChainKeyType key, int tableSize) {
 	int i = 0;
 	int hashValue = 0;
+	int keyLength = strlen(key);
 
 	for (i = 0; i < keyLength; i++) {
 		hashValue = (hashValue << 3) + key[i];

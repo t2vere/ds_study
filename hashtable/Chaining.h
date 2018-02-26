@@ -13,31 +13,31 @@
 #include <string.h>
 
 
-typedef char* KeyType;
-typedef char* ValueType;
+typedef char* ChainKeyType;
+typedef char* ChainValueType;
 
-typedef struct tagNode {
-	KeyType key;
-	ValueType value;
+typedef struct tagChainNode {
+	ChainKeyType key;
+	ChainValueType value;
 
-	struct tagNode* next;
-} Node;
+	struct tagChainNode* next;
+} ChainNode;
 
-typedef Node* List;
+typedef ChainNode* List;
 
-typedef struct tagHashTable {
+typedef struct tagChainHashTable {
 	int tableSize;
 	List* table;
-} HashTable;
+} ChainHashTable;
 
-HashTable* CHT_createHashTable(int size);
-void CHT_destroyHashTable(HashTable* tab);
+ChainHashTable* CHT_createHashTable(int size);
+void CHT_destroyHashTable(ChainHashTable* tab);
 
-Node* CHT_createNode(KeyType key, ValueType value);
-void CHT_destroyNode(Node* node);
+ChainNode* CHT_createNode(ChainKeyType key, ChainValueType value);
+void CHT_destroyNode(ChainNode* node);
 
-void CHT_set(HashTable* table, KeyType key, ValueType value);
-ValueType CHT_get(HashTable* table, KeyType key);
-int CHT_hash(KeyType key, int keyLength, int tableSize);
+void CHT_set(ChainHashTable* table, ChainKeyType key, ChainValueType value);
+ChainValueType CHT_get(ChainHashTable* table, ChainKeyType key);
+int CHT_hash(ChainKeyType key, int tableSize);
 
 #endif /* HASHTABLE_CHAINING_H_ */
