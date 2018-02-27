@@ -19,7 +19,8 @@
 //void testPriorityQueue(void);
 //void testSimpleHashTable(void);
 //void testChaining(void);
-void testOpenAddressing(void);
+//void testOpenAddressing(void);
+void testGraph(void);
 
 int main(void) {
 
@@ -52,7 +53,10 @@ int main(void) {
 	// hashtable
 //	testSimpleHashTable();
 //	testChaining();
-	testOpenAddressing();
+//	testOpenAddressing();
+
+	// graph
+	testGraph();
 
 	return 0;
 }
