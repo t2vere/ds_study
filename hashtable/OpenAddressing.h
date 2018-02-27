@@ -20,23 +20,23 @@ enum ElementStatus {
 	, OCCUPIED = 1
 };
 
-typedef struct tagElementType {
+typedef struct tagOpenAddrElementType {
 	OpenAddrKeyType key;
 	OpenAddrValueType value;
 
 	enum ElementStatus status;
-} ElementType;
+} OpenAddrElementType;
 
 typedef struct tagOpenAddrHashTable {
 	int occupiedCount;
 	int tableSize;
 
-	ElementType* table;
+	OpenAddrElementType* table;
 } OpenAddrHashTable;
 
 OpenAddrHashTable* OAHT_createHashTable(int tableSize);
 void OAHT_destroyHashTable(OpenAddrHashTable* ht);
-void OAHT_clearElement(ElementType* element);
+void OAHT_clearElement(OpenAddrElementType* element);
 
 void OAHT_set(OpenAddrHashTable** ht, OpenAddrKeyType key, OpenAddrValueType value);
 OpenAddrValueType OAHT_get(OpenAddrHashTable* ht, OpenAddrKeyType key);

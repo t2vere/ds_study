@@ -62,17 +62,17 @@ void testChaining(void) {
 void testOpenAddressing(void) {
 	OpenAddrHashTable* ht = OAHT_createHashTable(11);
 
-	OAHT_set(ht, "MSFT", "Microsoft Corp.");
-	OAHT_set(ht, "JAVA", "Sun Microsystems");
-	OAHT_set(ht, "REDH", "Red Hat Linux");
-	OAHT_set(ht, "APAC", "Apache Org.");
-	OAHT_set(ht, "ZYMZZ", "Unisys Ops Check"); // APAC와 충돌
-	OAHT_set(ht, "IBM", "IBM Ltd.");
-	OAHT_set(ht, "ORCL", "Oracle Corp.");
-	OAHT_set(ht, "CSCO", "Cisco Systems, Inc.");
-	OAHT_set(ht, "GOOG", "Google Inc.");
-	OAHT_set(ht, "YHOO", "Yahoo! Inc.");
-	OAHT_set(ht, "NOVL", "Novell, Inc.");
+	OAHT_set(&ht, "MSFT", "Microsoft Corp.");
+	OAHT_set(&ht, "JAVA", "Sun Microsystems");
+	OAHT_set(&ht, "REDH", "Red Hat Linux");
+	OAHT_set(&ht, "APAC", "Apache Org.");
+	OAHT_set(&ht, "ZYMZZ", "Unisys Ops Check"); // APAC와 충돌
+	OAHT_set(&ht, "IBM", "IBM Ltd.");
+	OAHT_set(&ht, "ORCL", "Oracle Corp.");
+	OAHT_set(&ht, "CSCO", "Cisco Systems, Inc.");
+	OAHT_set(&ht, "GOOG", "Google Inc.");
+	OAHT_set(&ht, "YHOO", "Yahoo! Inc.");
+	OAHT_set(&ht, "NOVL", "Novell, Inc.");
 
 	printf("\n");
 	printf("Key: %s, Value: %s\n", "MSFT", OAHT_get(ht, "MSFT"));

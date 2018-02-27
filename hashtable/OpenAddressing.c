@@ -10,8 +10,8 @@
 
 OpenAddrHashTable* OAHT_createHashTable(int tableSize) {
 	OpenAddrHashTable* ht = (OpenAddrHashTable*) malloc(sizeof(OpenAddrHashTable));
-	ht->table = (ElementType*) malloc(sizeof(ElementType) * tableSize);
-	memset(ht->table, 0, sizeof(ElementType) * tableSize);
+	ht->table = (OpenAddrElementType*) malloc(sizeof(OpenAddrElementType) * tableSize);
+	memset(ht->table, 0, sizeof(OpenAddrElementType) * tableSize);
 
 	ht->occupiedCount = 0;
 	ht->tableSize = tableSize;
@@ -19,7 +19,7 @@ OpenAddrHashTable* OAHT_createHashTable(int tableSize) {
 	return ht;
 }
 
-void OAHT_clearElement(ElementType* element) {
+void OAHT_clearElement(OpenAddrElementType* element) {
 	if (element->status == EMPTY) {
 		return;
 	}
@@ -114,7 +114,7 @@ int OAHT_hash2(OpenAddrKeyType key, int tableSize) {
 
 void OAHT_rehash(OpenAddrHashTable** ht) {
 	int i = 0;
-	ElementType* oldTable = (*ht)->table;
+	OpenAddrElementType* oldTable = (*ht)->table;
 
 	OpenAddrHashTable* newHashTable = OAHT_createHashTable((*ht)->tableSize * 2);
 	printf("\nRehashed. New table size: %d\n\n", newHashTable->tableSize);
