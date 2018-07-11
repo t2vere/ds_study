@@ -8,7 +8,7 @@
 
 int testLinkedQueue(void) {
 
-	Node* popped = NULL;
+	LQNode* popped = NULL;
 	LinkedQueue* queue = NULL;
 
 	LQ_createQueue(&queue);

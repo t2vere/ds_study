@@ -11,23 +11,23 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct tagNode {
+typedef struct tagLQNode {
 	char* data;
-	struct tagNode* next;
-} Node;
+	struct tagLQNode* next;
+} LQNode;
 
 typedef struct tagLinkedQueue {
-	Node* front;
-	Node* rear;
+	LQNode* front;
+	LQNode* rear;
 	int count;
 } LinkedQueue;
 
 void LQ_createQueue(LinkedQueue** queue);
 void LQ_destroyQueue(LinkedQueue* queue);
-Node* LQ_createNode(char* data);
-void LQ_destroyNode(Node* node);
-void LQ_enqueue(LinkedQueue* queue, Node* newNode);
-Node* LQ_dequeue(LinkedQueue* queue);
+LQNode* LQ_createNode(char* data);
+void LQ_destroyNode(LQNode* node);
+void LQ_enqueue(LinkedQueue* queue, LQNode* newNode);
+LQNode* LQ_dequeue(LinkedQueue* queue);
 int LQ_isEmpty(LinkedQueue* queue);
 
 #endif /* QUEUE_LINKEDQUEUE_H_ */
