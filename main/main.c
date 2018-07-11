@@ -5,6 +5,7 @@
  *      Author: user
  */
 
+void testSingleLinkedList(void);
 //int testLinkedQueue(void);
 //int testSbTree(void);
 //int testLcrsTree(void);
@@ -20,11 +21,12 @@
 //void testSimpleHashTable(void);
 //void testChaining(void);
 //void testOpenAddressing(void);
-void testGraph(void);
+//void testGraph(void);
 
 int main(void) {
 
 	// list
+	testSingleLinkedList();
 
 	// stack
 
@@ -56,7 +58,7 @@ int main(void) {
 //	testOpenAddressing();
 
 	// graph
-	testGraph();
+//	testGraph();
 
 	return 0;
 }
